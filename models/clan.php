@@ -16,6 +16,10 @@
 		function debug()
 		{
 			print "  Clan: " . $this->name . "\n";
+			foreach($this->banner as $b)
+			{
+				$b->debug();
+			}
 		}
 	}
 	
