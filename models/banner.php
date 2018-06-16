@@ -17,7 +17,11 @@
 
 		function debug()
 		{
-			print "    Banner: " . $this->name . "\n";
+      print "    Banner: " . $this->name . "\n";
+      foreach($this->family as $f)
+			{
+        $f->debug();
+			}
 		}
 	}
 	

@@ -23,7 +23,19 @@
 			// make banner
 			for($k=0; $k<$conf_numBanners; $k++)
 			{
-				$banner[$k] = new Banner($house[$i], $clan[$j]);
+        $banner[$k] = new Banner($house[$i], $clan[$j]);
+        // make family
+        for($l=0; $l<$conf_numFamilies; $l++)
+        {
+          $family[$l] = new Family($house[$i], $clan[$j], $banner[$k]);
+          // make persons
+          for($m=0; $m<$conf_numPeople; $m++)
+          {
+            $person[$m] = new Person($house[$i], $clan[$j], $banner[$k], $family[$l]);
+            $family[$l]->person[$m] = $person[$m];
+          } 
+          $banner[$k]->family[$l] = $family[$l];
+        } 
 				$clan[$j]->banner[$k] = $banner[$k];
 			}
 			$house[$i]->clan[$j] = $clan[$j];
