@@ -18,7 +18,26 @@
 		public $house;
 		public $clan;
 		public $banner;
-		public $family;
+    public $family;
+    
+		function __construct($house, $clan, $banner, $family)
+		{
+			$this->house = $house;
+			$this->clan = $clan;
+			$this->banner = $banner;
+			$this->family = $family;
+			$this->name = namer_makeName();
+		}
+
+		function debug()
+		{
+			print "        Person: " . $this->name;
+			print " " . $this->family->name;
+			print ", Banner " . $this->banner->name;
+			print ", Clan " . $this->clan->name;
+			print ", House " . $this->house->name;
+			print "\n";
+		}
 
 		// biases array
 		// contains house, banner, clan, family additives
