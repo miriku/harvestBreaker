@@ -40,5 +40,13 @@
 			}
 			$house[$i]->clan[$j] = $clan[$j];
 		}
-		$house[$i]->debug();
-	}
+    $house[$i]->debug();
+  }
+  
+  // make corps
+  for($i=0; $i<8; $i++)
+  {
+    $corp[$i] = new Corp($i, $conf_corpIdentifiers);
+
+    $corp[$i]->debug();
+  }
