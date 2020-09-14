@@ -46,7 +46,6 @@
   // make corps
   for($i=0; $i<8; $i++)
   {
-    $corp[$i] = new Corp($i, $conf_corpIdentifiers);
-
+    $corp[$i] = new Corp($i, $conf_suffix);
     $corp[$i]->debug();
   }

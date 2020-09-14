@@ -15,26 +15,9 @@
 		public $product; 
 		public $division; // division object
 		
-		public function __construct($companyId, $conf_corpIdentifiers)
+		public function __construct($companyId, $corpSuffix)
 		{
 			// make name
-
-			// make suffix
-			// Inc / Co / & Sons / Ltd / Gmbh / Partnership / Cartel / Trust
-			// this arrives from config array in harvest breaker
-	
-			// then we spin up sub parts
-			for($i=0; $i<5; $i++)
-			{
-				$product[] = new Product();
-			}
-			
-		}
-
-		public function getPrintableName()
-		{
-			return $this->name . " " . $this->suffix;
-      // make name
       $this->name = namer_makeName();
 
       // store Id
@@ -42,7 +25,18 @@
       $this->id = $companyId;
 
       // get name suffix
-      $this->name = $this->name . " " . $conf_corpIdentifiers[$this->id];
+      $this->suffix = $corpSuffix[$this->id];
+
+			// then we spin up sub parts
+			for($i=0; $i<5; $i++)
+			{
+				$division[] = new Division();
+			}
+		}
+
+		public function getPrintableName()
+		{
+			return $this->name . " " . $this->suffix;
 		}
 
 		public function initialHire()
@@ -59,7 +53,7 @@
 
     public function debug()
     {
-      print "Corp $this->id. $this->name\n";
+      print "Corp $this->id. $this->name $this->suffix\n";
     }
 	}
 	
