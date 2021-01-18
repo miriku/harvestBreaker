@@ -9,3 +9,7 @@
 	require("models/banner.php");
 	require("models/family.php");
 	require("models/person.php");
+	require("models/team.php");
+	require("models/division.php");
+	require("models/group.php");
+
