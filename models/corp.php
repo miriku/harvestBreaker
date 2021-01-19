@@ -3,7 +3,7 @@
 	{
     // structure:
     // 1 corporation
-    // 5 divisions - products
+    // 2  divisions - products
     // 5 group - feature
     // 5 teams - trait
     // 5 people - task
@@ -34,10 +34,6 @@
 		{
     }
     
-    public function iterateOneTime()
-    {
-    }
-
     public function debug()
     {
       print "Corp $this->id. $this->name\n";

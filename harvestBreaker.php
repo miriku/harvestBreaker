@@ -47,6 +47,6 @@
   for($i=0; $i<8; $i++)
   {
     $corp[$i] = new Corp($i, $conf_corpIdentifiers);
-
+    $corp[$i]->initialHire($person);
     $corp[$i]->debug();
   }
